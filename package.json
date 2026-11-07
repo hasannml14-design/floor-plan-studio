@@ -1,0 +1,53 @@
+{
+  "name": "floor-plan-creator-web",
+  "private": true,
+  "version": "0.6.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run && npm run test:server",
+    "test:watch": "vitest",
+    "server:dev": "node --watch server/index.js",
+    "server:start": "node server/index.js",
+    "dev:all": "concurrently -k \"npm:server:dev\" \"npm:dev\"",
+    "test:server": "node --test server/__tests__/*.test.js",
+    "dev:netlify": "netlify dev",
+    "build:netlify": "npm run build"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.117.3",
+    "@react-three/fiber": "^8.17.10",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.171.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "google-auth-library": "^9.15.1",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1",
+    "@netlify/functions": "^3.1.10"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.171.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8",
+    "concurrently": "^9.1.0",
+    "@netlify/vite-plugin": "^2.5.0",
+    "netlify-cli": "^23.4.0"
+  }
+}
